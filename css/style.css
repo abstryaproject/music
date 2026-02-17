@@ -1,0 +1,462 @@
+/* ==============================
+   AUDIO LOADING INDICATOR
+============================== */
+#audio-loading {
+  margin-top: 6px;
+}
+
+/* Spinner */
+.loader {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0,255,255,0.3);
+  border-top: 2px solid #0ff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* ==============================
+   NAVBAR
+============================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Container flex */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0ff;
+}
+.logo span { color: #0ff; }
+
+/* Right section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search Input */
+.right-section input {
+  transition: all 0.3s;
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0ff;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px) {
+  /* Nav links hidden on mobile */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    width: 200px;
+    background: rgba(0,0,0,0.85);
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    gap: 15px;
+  }
+  /* Show nav links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Show hamburger menu */
+  .menu-toggle { display: block; }
+
+  /* Shrink search bar on mobile */
+  .right-section input {
+    width: 100px;
+  }
+}
+
+/* Logo animation */
+.cover-animate {
+  animation: glowBounce 2s ease-in-out infinite;
+  border-radius: 5px;
+}
+@keyframes glowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+  }
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0f0c29; /* fallback */
+}
+.modal-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  display: none; 
+  justify-content:center; 
+  align-items:center;
+  z-index: 1000; 
+  padding:20px;
+  overflow-y:auto;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+  display: flex;
+  opacity:1;
+}
+
+.modal {
+  background: rgba(0,0,0,0.95);
+  padding:30px;
+  border-radius:15px;
+  max-width:800px;
+  width:100%;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.modal-close {
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:1.5rem;
+  background:none;
+  border:none;
+  color:#0ff;
+  cursor:pointer;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity:0; }
+  to { transform: translateY(0); opacity:1; }
+}
+/* ==============================
+   GLOBAL THEME (GLASS STYLE)
+============================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Glass utility */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+nav {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a,
+nav button {
+  background: rgba(99, 102, 241, 0.25) !important;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+nav a:hover,
+nav button:hover {
+  background: rgba(99, 102, 241, 0.45) !important;
+}
+
+/* ==============================
+   SEARCH INPUT
+============================== */
+#search {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 12px;
+}
+
+#search::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#search:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+/* ==============================
+   SONG / CARD DESIGN
+============================== */
+#featured-songs > div,
+#playlistContainer > div,
+#albumSongsContainer > div,
+#artistSongsContainer > div,
+#albumsContainer > div,
+#artistsContainer > div {
+  background: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+#featured-songs > div:hover,
+#playlistContainer > div:hover,
+#albumSongsContainer > div:hover,
+#artistSongsContainer > div:hover,
+#albumsContainer > div:hover,
+#artistsContainer > div:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+button {
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+button.bg-indigo-600 {
+  background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+  border: none;
+}
+
+button.bg-green-600 {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  border: none;
+}
+
+button.bg-red-600 {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  border: none;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================
+   MUSIC PLAYER (GLASS BAR)
+============================== */
+.fixed.bottom-0 {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==============================
+   RANGE SLIDERS (PROGRESS + VOLUME)
+============================== */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #6366f1;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+}
+
+/* ==============================
+   TEXT COLORS
+============================== */
+.text-gray-500,
+.text-gray-400 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.text-gray-300 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ==============================
+   PLAYING SONG HIGHLIGHT
+============================== */
+.border-indigo-600 {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+}
+
+/* ==============================
+   MOBILE OPTIMIZATION
+============================== */
+@media (max-width: 768px) {
+  .fixed.bottom-0 {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Neon slider */
+#progress {
+  accent-color: #0ff; /* slider thumb color */
+}
+/* Neon glow and subtle bounce for cover image */
+.cover-animate {
+  animation: glowBounce 2s ease-in-out infinite;
+  border-radius: 5px; /* optional: slight rounding */
+}
+
+/* Keyframes for neon glow + gentle bounce */
+@keyframes glowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+  }
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+}
+/* Ensure content doesn't get hidden behind the fixed player */
+body {
+  padding-bottom: 100px; /* same height as music player + some spacing */
+}
+/* ==============================
+   WHY CHOOSE HALA MAYE – PREMIUM
+============================== */
+
+.section.bg-light {
+  background: linear-gradient(180deg, #0b0f1a, #0e1325);
+  padding: 80px 20px;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card style */
+.services-grid .card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft neon glow on hover */
+.services-grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0,255,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.services-grid .card:hover::before {
+  opacity: 1;
+}
+
+.services-grid .card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.15);
+}
+
+/* Titles */
+.services-grid .card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00f7ff;
+}
+
+/* Description */
+.services-grid .card p {
+  font-size: 0.95rem;
+  color: #cfd8ff;
+  line-height: 1.6;
+}
+
+/* Mobile tuning */
+@media (max-width: 600px) {
+  .section-header {
+    font-size: 1.6rem;
+  }
+
+  .services-grid .card {
+    padding: 25px 20px;
+  }
+}
