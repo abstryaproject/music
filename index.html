@@ -98,7 +98,7 @@
       <div>
         <h3 id="player-title" class="font-semibold text-white">Song Title</h3>
         <p id="player-artist" class="text-gray-400 text-sm">Artist</p>
-        <a target="_blank" href="download.html" class="text-cyan-400 text-xs hover:underline hover:text-cyan-300 transition">Download</a>
+        <a href="#download" class="text-cyan-400 text-xs hover:underline hover:text-cyan-300 transition">Download</a>
       </div>
     </div>
     <!-- Controls -->
@@ -136,22 +136,15 @@
         class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
       ></div>
     </section>
-      <section class="mt-10">
-<h2 class="text-xl font-semibold mb-6">💿 Albums</h2>
+    <section id="albums" class="mt-10">
+  <h2 class="text-xl font-semibold mb-6">💿 Albums</h2>
+  <div id="albumsContainer" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+</section>
 
-    <div
-      id="albumsContainer"
-      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
-    ></div>
-      </section>
-      <section class="mt-10">
-        <h2 class="text-xl font-semibold mb-6">🎤 Artists</h2>
-
-    <div
-      id="artistsContainer"
-      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
-    ></div>
-      </section>
+<section id="artists" class="mt-10">
+  <h2 class="text-xl font-semibold mb-6">🎤 Artists</h2>
+  <div id="artistsContainer" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+</section>
     <!-- Playlist -->
     <section class="mt-10">
       <h2 class="text-xl font-semibold mb-4">🎧 All Songs</h2>
@@ -164,6 +157,8 @@
   </main>
   <!-- Header -->
 <center>
+<div id="download" class="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+  <!-- Download form here -->
 <div class="mb-6">
   <h1 class="text-2xl font-bold text-cyan-400">Download Song</h1>
   <p class="text-gray-400 text-sm">Select artist, album and song to download</p>
@@ -203,7 +198,7 @@
   </a>
 
 </div>
-
+</div>
   <section class="section bg-light">
   <h2 class="section-header">✨ Why Choose Us</h2>
 
