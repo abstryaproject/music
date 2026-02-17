@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Download Music | HALA MAYE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gray-900 text-white p-6">
+
+<!-- Header -->
+<div class="mb-6">
+  <h1 class="text-2xl font-bold text-cyan-400">Download Song</h1>
+  <p class="text-gray-400 text-sm">Select artist, album and song to download</p>
+</div>
+
+<!-- Download Form -->
+<div class="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+
+  <!-- Artist -->
+  <div>
+    <label class="block text-sm mb-1">Artist</label>
+    <select id="artistSelect" class="w-full p-2 rounded bg-gray-700">
+      <option value="">Select artist</option>
+    </select>
+  </div>
+
+  <!-- Album -->
+  <div>
+    <label class="block text-sm mb-1">Album</label>
+    <select id="albumSelect" class="w-full p-2 rounded bg-gray-700" disabled>
+      <option value="">Select album</option>
+    </select>
+  </div>
+
+  <!-- Song -->
+  <div>
+    <label class="block text-sm mb-1">Song</label>
+    <select id="songSelect" class="w-full p-2 rounded bg-gray-700" disabled>
+      <option value="">Select song</option>
+    </select>
+  </div>
+
+  <!-- Download Button -->
+  <a id="downloadBtn"
+     class="block text-center bg-cyan-400 text-black font-semibold py-2 rounded opacity-50 pointer-events-none">
+     Download Song
+  </a>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/player.js"></script>
+<script src="js/download.js"></script>
+
+</body>
+</html>

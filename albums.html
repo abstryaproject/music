@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- Charset & Viewport -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Description: Shows in search results -->
+<meta name="description" content="HALA MAYE is a premium music streaming platform offering studio-quality audio, playlists, and personalized recommendations.">
+
+<!-- Keywords (optional, mostly ignored by Google now) -->
+<meta name="keywords" content="music streaming, online music, HALA MAYE, playlists, audio, songs, halamaye, lailaba">
+
+<!-- Author -->
+<meta name="author" content="DevAgency Team">
+
+<!-- Robots: allow search engines to index your page -->
+<meta name="robots" content="index, follow">  <title>HalaMaye | Albums</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+body {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;
+}
+</style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="secure-content"></div>
+<script>
+  renderProtectedContent(
+    "secure-content",
+    "PGgxPkhBTEEgTUFZRSBQcmVtaXVtIENvbnRlbnQ8L2gxPg=="
+  );
+</script>
+  <!-- ==============================
+       NAVBAR
+  =============================== -->
+  <nav class="flex items-center justify-between px-6 py-4">
+    <h1 class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
+  <img src="assets/covers/halamaye-cover.png" alt="HALA MAYE" class="w-8 h-8 object-contain cover-animate" />
+  HALA MAYE
+</h1>     <div class="flex gap-3">
+      <a href="index.html" class="px-4 py-2">Home</a>
+      <a href="albums.html" class="px-4 py-2 text-cyan-400">Albums</a>
+      <a href="artists.html" class="px-4 py-2">Artists</a>
+      
+    </div>
+  </nav>
+
+  <!-- ==============================
+       ALBUMS GRID
+  =============================== -->
+  <main class="p-6 pb-32">
+    <section data-protected></section>
+    <hr
+<div>
+  <div>
+
+  <!-- Top Row: Song Info + Controls -->
+  <div class="flex items-center w-full justify-between gap-4">
+
+    <!-- Song Info -->
+    <div class="flex items-center gap-4">
+      <img
+        id="player-cover"
+        src=""
+        class="w-14 h-14 rounded-lg object-cover shadow-md"
+      />
+      <div>
+        <h3 id="player-title" class="font-semibold text-white">Song Title</h3>
+        <p id="player-artist" class="text-gray-400 text-sm">Artist</p>
+        <a href="download.html" class="text-cyan-400 text-xs hover:underline hover:text-cyan-300 transition">Download</a>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex items-center gap-4">
+      <button id="prev-btn" class="text-xl hover:text-cyan-400 hover:scale-110 transition-transform duration-200">⏮</button>
+      <button id="play-btn" class="text-2xl hover:text-cyan-400 hover:scale-110 transition-transform duration-200">▶</button>
+      <button id="next-btn" class="text-xl hover:text-cyan-400 hover:scale-110 transition-transform duration-200">⏭</button>
+    </div>
+  </div>
+
+  <!-- Bottom Row: Progress Bar -->
+  <div class="flex items-center gap-4 w-full">
+    <span id="currentTime" class="text-sm text-cyan-300">0:00</span>
+    <input
+      id="progress"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      class="w-full h-2 rounded-lg accent-cyan-400 bg-gray-700 cursor-pointer"
+    />
+    <span id="duration" class="text-sm text-cyan-300">0:00</span>
+  </div>
+    <!-- Audio Loading Indicator -->
+    <div id="audio-loading" class="hidden flex items-center gap-2 text-cyan-400 text-sm"> <span class="loader"></span>Loading song...</div>
+
+</div>
+  <hr
+    <h2 class="text-xl font-semibold mb-6">💿 Albums</h2>
+
+    <div
+      id="albumsContainer"
+      class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
+    ></div>
+  </main>
+
+   <div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
+    <div class="text-center md:text-right">
+      <p class="text-gray-500 text-sm">
+        &copy; 2026 HALA MAYE. All rights reserved.
+      </p>
+      <p class="text-gray-500 text-sm">
+        Developed by <a href="https://devagencies.netlify.app"><span class="text-cyan-400 font-semibold">DevAgency Team</span></a><br/></br/>
+      </p>
+    </div>
+ </div>
+<!-- ==============================
+     DETAIL MODAL
+============================== -->
+<div id="detailModal" class="modal-overlay">
+  <div class="modal">
+    <button id="modalClose" class="modal-close">✖</button>
+    <h2 id="modalTitle" class="text-xl font-semibold mb-4"></h2>
+    <div id="modalSongs" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+  </div>
+</div>
+  <!-- ==============================
+       SCRIPT
+  =============================== -->
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/anti-copy.js"></script>
+  <script src="js/static-guard.js"></script>
+</body>
+</html>
