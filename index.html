@@ -39,36 +39,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
  
-  <script>
-function updateMetaTags(data) {
-  // Update Title
-  document.title = data.title;
-
-  // Standard Meta
-  document.querySelector('meta[name="description"]')
-    ?.setAttribute("content", data.description);
-
-  // Open Graph
-  document.querySelector('meta[property="og:title"]')
-    ?.setAttribute("content", data.title);
-
-  document.querySelector('meta[property="og:description"]')
-    ?.setAttribute("content", data.description);
-
-  document.querySelector('meta[property="og:image"]')
-    ?.setAttribute("content", data.image);
-
-  // Twitter
-  document.querySelector('meta[name="twitter:title"]')
-    ?.setAttribute("content", data.title);
-
-  document.querySelector('meta[name="twitter:description"]')
-    ?.setAttribute("content", data.description);
-
-  document.querySelector('meta[name="twitter:image"]')
-    ?.setAttribute("content", data.image);
-}
-  </script>
+  
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -98,8 +69,8 @@ function updateMetaTags(data) {
     
     <div class="flex gap-3">
       <a href="#" class="px-4 py-2">Home</a>
-      <a href="albums.html" class="px-4 py-2">Albums</a>
-      <a href="artists.html" class="px-4 py-2">Artists</a>
+      <a href="#albums" class="px-4 py-2">Albums</a>
+      <a href="#artists" class="px-4 py-2">Artists</a>
       
     </div>
   </nav>
@@ -127,7 +98,7 @@ function updateMetaTags(data) {
       <div>
         <h3 id="player-title" class="font-semibold text-white">Song Title</h3>
         <p id="player-artist" class="text-gray-400 text-sm">Artist</p>
-        <a href="download.html" class="text-cyan-400 text-xs hover:underline hover:text-cyan-300 transition">Download</a>
+        <a target="_blank" href="download.html" class="text-cyan-400 text-xs hover:underline hover:text-cyan-300 transition">Download</a>
       </div>
     </div>
     <!-- Controls -->
