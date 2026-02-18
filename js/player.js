@@ -17,7 +17,7 @@ const songs = [
     id: 2,
     title: "Angon Sakina ",
     artist: "HalaMaye",
-    album: "HalaMaye 2025",
+    album: "HalaMaye 2026",
     cover: "assets/covers/angon_sakina.jpg",
     audio: "assets/audio/angon_sakina.mp3",
     download: "assets/audio/angon_sakina.mp3",
@@ -38,18 +38,18 @@ const albums = [
   },
   {
     title: "HalaMaye 2026",
-    cover: "assets/albums/halamaje_album2026_cover.jpg",
+    cover: "assets/albums/halamaye_album2026_cover.jpg",
     songs: songs.filter(s => s.album === "HalaMaye 2026")
-  },
-  {
-    title: "Others",
-    cover: "assets/albums/others_album_cover.jpg",
-    songs: songs.filter(s => s.album === "Others")
-  },
+  }, 
 {
     title: "HalaMaye Remix",
     cover: "assets/albums/halamaye_remix_album_cover.jpg",
     songs: songs.filter(s => s.album === "HalaMaye Remix")
+  },
+   {
+    title: "Others",
+    cover: "assets/albums/others_album_cover.jpg",
+    songs: songs.filter(s => s.album === "Others")
   }
 ];
 
