@@ -5,11 +5,11 @@
 const songs = [
   {
     id: 1,
-    title: "Hala Vibes",
+    title: "G. D. S. S. LAILABA ",
     artist: "HalaMaye",
     album: "HalaMaye 2025",
-    cover: "assets/covers/hala-vibes.jpg",
-    audio: "assets/audio/hala-vibes.mp3",
+    cover: "assets/covers/night-flow.jpg",
+    audio: "assets/audio/assets/audio/Dup(01)G. D S S LAILABA.mp3",
     download: "assets/audio/hala-vibes.mp3",
     featured: true
   },
