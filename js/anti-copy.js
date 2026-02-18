@@ -15,7 +15,7 @@
     disableShortcuts: true,
     disableImageDrag: true,
     devToolsDetection: true, // set true if you want
-    alertMessage: "⚠️ Copying is disabled."
+    alertMessage: "⚠️ Content protection enabled. Copying is disabled."
   };
 
   /* ====== RIGHT CLICK ====== */
