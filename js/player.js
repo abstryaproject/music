@@ -5,63 +5,23 @@
 const songs = [
   {
     id: 1,
-    title: "G. D. S. S. LAILABA ",
+    title: "GDSSS Lailaba",
     artist: "HalaMaye",
     album: "HalaMaye 2025",
-    cover: "assets/covers/night-flow.jpg",
-    audio: "assets/audio/assets/audio/Dup(01)G. D S S LAILABA.mp3",
-    download: "assets/audio/hala-vibes.mp3",
+    cover: "assets/covers/gdss_lailaba.jpg",
+    audio: "assets/audio/gdss_lailaba.mp3",
+    download: "assets/audio/gdss_lailaba.mp3",
     featured: true
   },
   {
     id: 2,
-    title: "Night Flow",
-    artist: "Maya Sound",
-    album: "Echoes 2025",
-    cover: "assets/covers/night-flow.jpg",
-    audio: "assets/audio/night-flow.mp3",
-    download: "assets/audio/night-flow.mp3",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Afro Wave",
-    artist: "Afro King",
-    album: "Urban Beats",
-    cover: "assets/covers/afro-wave.jpg",
-    audio: "assets/audio/afro-wave.mp3",
-    download: "assets/audio/afro-wave.mp3",
-    featured: true
-  },
-  {
-    id: 4,
-    title: "Street Love",
+    title: "Angon Sakina ",
     artist: "HalaMaye",
     album: "HalaMaye 2025",
-    cover: "assets/covers/street-love.jpg",
-    audio: "assets/audio/street-love.mp3",
-    download: "assets/audio/street-love.mp3",
+    cover: "assets/covers/angon_sakina.jpg",
+    audio: "assets/audio/angon_sakina.mp3",
+    download: "assets/audio/angon_sakina.mp3",
     featured: true
-  },
-  {
-    id: 5,
-    title: "Chill Zone",
-    artist: "Maya Sound",
-    album: "Echoes 2025",
-    cover: "assets/covers/chill-zone.jpg",
-    audio: "assets/audio/chill-zone.mp3",
-    download: "assets/audio/chill-zone.mp3",
-    featured: false
-  },
-{
-    id: 6,
-    title: "Auta MG Remix",
-    artist: "Auta_MGBoy",
-    album: "Dj Mansoor",
-    cover: "assets/covers/night-flow.jpg",
-    audio: "assets/audio/auta_MG.mp3",
-    download: "assets/audio/auta_MG.mp3",
-    featured: false
   }
 ];
 
@@ -73,45 +33,35 @@ const songs = [
 const albums = [
   {
     title: "HalaMaye 2025",
-    cover: "assets/albums/hala-vibes.jpg",
+    cover: "assets/albums/halamaye_album2025_cover.jpg",
     songs: songs.filter(s => s.album === "HalaMaye 2025")
   },
   {
-    title: "Echoes 2025",
-    cover: "assets/albums/night-flow.jpg",
-    songs: songs.filter(s => s.album === "Echoes 2025")
+    title: "HalaMaye 2026",
+    cover: "assets/albums/halamaje_album2026_cover.jpg",
+    songs: songs.filter(s => s.album === "HalaMaye 2026")
   },
   {
-    title: "Urban Beats",
-    cover: "assets/albums/afro-wave.jpg",
-    songs: songs.filter(s => s.album === "Urban Beats")
+    title: "Others",
+    cover: "assets/albums/others_album_cover.jpg",
+    songs: songs.filter(s => s.album === "Others")
   },
 {
-    title: "Dj Mansoor",
-    cover: "assets/albums/night-flow.jpg",
-    songs: songs.filter(s => s.album === "Dj Mansoor")
+    title: "HalaMaye Remix",
+    cover: "assets/albums/halamaye_remix_album_cover.jpg",
+    songs: songs.filter(s => s.album === "HalaMaye Remix")
   }
 ];
 
 const artists = [
   {
     name: "HalaMaye",
-    photo: "assets/artists/dj-hala.jpg",
+    photo: "assets/artists/Halamaye_artist_cover.jpg",
     songs: songs.filter(s => s.artist === "HalaMaye")
   },
-  {
-    name: "Maya Sound",
-    photo: "assets/artists/maya-sound.jpg",
-    songs: songs.filter(s => s.artist === "Maya Sound")
-  },
-  {
-    name: "Afro King",
-    photo: "assets/artists/afro-king.jpg",
-    songs: songs.filter(s => s.artist === "Afro King")
-  },
-{
-    name: "Auta_MGBoy",
-    photo: "assets/artists/maya-sound.jpg",
-    songs: songs.filter(s => s.artist === "Auta_MGBoy")
+   {
+    name: "Others",
+    photo: "assets/artists/others_artist_cover.jpg",
+    songs: songs.filter(s => s.artist === "Others")
   }
 ];
