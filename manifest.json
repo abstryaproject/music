@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "halamaye-cover.png",
+      "src": "assets/covers/halamaye-cover.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "halamaye-cover.png",
+      "src": "assets/covers/halamaye-cover.png",
       "sizes": "512x512",
       "type": "image/png"
     }
