@@ -151,7 +151,13 @@
   </center>
   </main>
   <!-- Header -->
-  <button id="installBtn" hidden>Install HALA MAYE</button>
+  <div class="services-grid">
+    <div class="card">
+      <h3>Studio-Quality Audio</h3>
+      <p>Experience music the way it was meant to be heard.</p>
+    </div>
+  </div>
+ <button id="installBtn" hidden>Install HALA MAYE</button>
   <script>
 let deferredPrompt;
 
@@ -164,7 +170,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
 installBtn.addEventListener("click", () => {
   deferredPrompt.prompt();
 });
-  </script>
+  </script> 
 <center>
 <div id="download" class="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
   <!-- Download form here -->
