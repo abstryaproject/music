@@ -211,16 +211,39 @@
   </div>
 </section>
 <center>
- <div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
-    <div class="text-center md:text-right">
-      <p class="text-gray-500 text-sm">
-        &copy; 2026 HALA MAYE. All rights reserved.
-      </p>
-      <p class="text-gray-500 text-sm">
-        Developed by <a href="https://abstryaproject.github.io/devagency/" target="_blank"><span class="text-cyan-400 font-semibold">DevAgency Team</span></a><br/></br/>
-      </p>
-    </div>
- </div>
+ <div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 text-white shadow-lg">
+  <div class="text-center md:text-right">
+    
+    <!-- Copyright -->
+    <p class="text-gray-500 text-sm cursor-pointer hover:text-gray-400"
+       onclick="openDevAgencyModal()">
+      &copy; 2026 HALA MAYE. All rights reserved.
+    </p>
+
+    <!-- Developed By -->
+    <p class="text-gray-500 text-sm flex items-center justify-center md:justify-end gap-2">
+      
+      <span class="cursor-pointer hover:text-gray-400" onclick="openDevAgencyModal()">
+        Developed by:
+      </span>
+
+      <!-- Clickable Logo -->
+      <img src="assets/covers/admin.webp"
+           alt="DevAgency Logo"
+           class="h-5 w-auto rounded-full opacity-80 cursor-pointer hover:opacity-100 transition"
+           onclick="openDevAgencyModal()">
+
+      <!-- DevAgency Team Text -->
+      <a href="https://abstryaproject.github.io/devagency/"
+         class="text-cyan-400 font-semibold hover:text-cyan-300 cursor-pointer"
+         onclick="openDevAgencyModal()">
+        DevAgency Team
+      </a>
+
+    </p>
+
+  </div>
+</div>
 </center>    
   <div id="detailModal" class="modal-overlay">
   <div class="modal">
@@ -229,6 +252,68 @@
     <div id="modalSongs" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
   </div>
 </div>
+  <div id="devAgencyModal"
+     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+  <div class="bg-gray-900 text-white rounded-2xl shadow-2xl p-6 w-[90%] max-w-sm relative animate-fadeIn">
+    
+    <!-- Close Button -->
+    <button onclick="closeDevAgencyModal()"
+            class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl">
+      &times;
+    </button>
+
+    <!-- Profile Image -->
+    <div class="flex justify-center mb-4">
+      <img src="assets/covers/admin.webp" 
+           alt="DevAgency Admin" 
+           class="h-20 w-20 rounded-full border-2 border-cyan-400">
+    </div>
+
+    <!-- Name & Role -->
+    <h3 class="text-center text-cyan-400 font-semibold text-lg">
+      Abdullahi I. Lailaba
+    </h3>
+    <p class="text-gray-400 text-center text-sm mb-3">
+      DevAgency Team Admin
+    </p>
+    <!-- Notes / Bio -->
+    <p class="text-gray-400 text-sm text-center leading-relaxed mb-4">
+      Passionate about building modern web experiences. Dedicated to fast, beautiful, and secure digital solutions.
+    </p>
+    <p class="text-gray-400 text-center text-sm mb-3">
+      https://abstryaproject.github.io/devagency<br>Phone: +234(0)8138605126
+    </p>
+  </div>
+</div>
+  <script>
+  function openDevAgencyModal() {
+    const modal = document.getElementById("devAgencyModal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeDevAgencyModal() {
+    const modal = document.getElementById("devAgencyModal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  // Close when clicking backdrop
+  document.getElementById("devAgencyModal").addEventListener("click", function(e) {
+    if (e.target === this) closeDevAgencyModal();
+  });
+</script>
+  <style>
+  .animate-fadeIn {
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  </style>
   <!-- ==============================
        SCRIPT
   =============================== -->
