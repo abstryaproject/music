@@ -84,3 +84,30 @@
 
 })();
 
+/* ====== ALERT + FORCE REDIRECT ====== */
+document.addEventListener("DOMContentLoaded", () => {
+  const devAgencyLink = document.querySelector(
+    'a[href="https://devagencies.netlify.app"]'
+  );
+
+  if (devAgencyLink) {
+    devAgencyLink.addEventListener("click", function (e) {
+      e.preventDefault(); // stop default behavior
+
+      alert("🚀 Redirecting to DevAgency Team website...");
+
+      const url = this.href;
+
+      /* Try multiple redirect strategies */
+      setTimeout(() => {
+        try {
+          window.location.href = url;         // Normal redirect
+          window.open(url, "_blank");         // Fallback 1
+          window.location.replace(url);       // Fallback 2
+        } catch (err) {
+          console.log("Redirect attempt:", err);
+        }
+      }, 300);
+    });
+  }
+});
