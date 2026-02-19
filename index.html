@@ -6,7 +6,8 @@
 
 <!-- Page title (very important for SEO) -->
 <title>HALA MAYE | Music Streaming Platform</title>
-
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
 <!-- SEO -->
 <meta name="description" content="Stream and discover music on HALA MAYE. Enjoy high-quality audio, curated playlists, trending songs, and a seamless listening experience anytime, anywhere.">
 <meta name="keywords" content="HALA MAYE, hala maye, music streaming, online music, playlists, trending songs, audio platform, halamaye, lailaba">
@@ -265,6 +266,21 @@
   <br>
   Phone: <a href="tel:+2348138605126" class="hover:text-cyan-300 underline">+234 813 860 5126</a>
 </p>
+    <button id="installBtn" hidden>Install HALA MAYE</button>
+
+<script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.hidden = false;
+});
+
+installBtn.addEventListener("click", () => {
+  deferredPrompt.prompt();
+});
+</script>
   </div>
 </div>
   <script>
@@ -302,6 +318,11 @@
   <script src="js/app.js"></script>
   <script src="js/anti-copy.js"></script>
   <script src="js/download.js"></script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("js/service-worker.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
 </body>
 </html>
