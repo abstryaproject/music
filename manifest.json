@@ -1,0 +1,23 @@
+{
+  "name": "HALA MAYE",
+  "short_name": "HALAMAYE",
+  "start_url": "/music/",
+  "scope": "/music/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "halamaye-cover.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "halamaye-cover.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
