@@ -151,26 +151,7 @@
   </center>
   </main>
   <!-- Header -->
-  <section class="section bg-light">
-  <div class="services-grid">
-    <div class="card">
-      <h3><button id="installBtn" hidden>Install App</button>
-  <script>
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.hidden = false;
-});
-
-installBtn.addEventListener("click", () => {
-  deferredPrompt.prompt();
-});
-  </script> </h3>
-    </div>
-  </div>
-  </section>
+  
 <center>
 <div id="download" class="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
   <!-- Download form here -->
@@ -231,6 +212,10 @@ installBtn.addEventListener("click", () => {
     </div>
   </div>
 </section>
+<div class="install-container">
+  <button id="installBtn" hidden>📲 Install App</button>
+</div>
+  
 <div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 text-white shadow-lg">
   <div class="text-center md:text-right">
     
@@ -308,6 +293,41 @@ installBtn.addEventListener("click", () => {
   });
 </script>
   <style>
+  .install-container {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#installBtn {
+  pointer-events: auto;
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: all 0.3s ease;
+}
+
+#installBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+  }
+#installBtn {
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
   .animate-fadeIn {
     animation: fadeIn 0.25s ease-out;
   }
@@ -317,6 +337,25 @@ installBtn.addEventListener("click", () => {
     to { opacity: 1; transform: scale(1); }
   }
   </style>
+  <script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.hidden = false;
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log("Install outcome:", outcome);
+  deferredPrompt = null;
+  installBtn.hidden = true;
+});
+  </script>
   <!-- ==============================
        SCRIPT
   =============================== -->
