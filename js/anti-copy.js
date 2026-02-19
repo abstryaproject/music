@@ -87,7 +87,7 @@
 /* ====== ALERT + FORCE REDIRECT ====== */
 document.addEventListener("DOMContentLoaded", () => {
   const devAgencyLink = document.querySelector(
-    'a[href="https://devagencies.netlify.app"]'
+    'a[href="https://abstryaproject.github.io/devagency/"]'
   );
 
   if (devAgencyLink) {
