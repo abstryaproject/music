@@ -1,10 +1,13 @@
-const CACHE_NAME = "hala-maye-v1";
+const CACHE_NAME = "halamaye";
 const urlsToCache = [
   "/music/",
   "/music/index.html",
-  "/music/style.css",
-  "/music/script.js",
-  "/music/halamaye-cover.png"
+  "/music/css/style.css",
+  "/music/js/app.js",
+  "/music/js/anti-copy.js",
+  "/music/js/data.js",
+  "/misic/js/data.js",
+  "/music/assets/covers/halamaye-cover.png"
 ];
 
 // Install
