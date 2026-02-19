@@ -151,6 +151,20 @@
   </center>
   </main>
   <!-- Header -->
+  <button id="installBtn" hidden>Install HALA MAYE</button>
+  <script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.hidden = false;
+});
+
+installBtn.addEventListener("click", () => {
+  deferredPrompt.prompt();
+});
+  </script>
 <center>
 <div id="download" class="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
   <!-- Download form here -->
@@ -266,21 +280,7 @@
   <br>
   Phone: <a href="tel:+2348138605126" class="hover:text-cyan-300 underline">+234 813 860 5126</a>
 </p>
-    <button id="installBtn" hidden>Install HALA MAYE</button>
 
-<script>
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.hidden = false;
-});
-
-installBtn.addEventListener("click", () => {
-  deferredPrompt.prompt();
-});
-</script>
   </div>
 </div>
   <script>
