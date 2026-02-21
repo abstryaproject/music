@@ -333,6 +333,36 @@
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
   }
+  .update-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  background: #0f172a;
+  color: white;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  z-index: 9999;
+  animation: slideUp 0.4s ease;
+}
+
+.update-content button {
+  margin: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
   </style>
   <script>
 let deferredPrompt;
@@ -365,6 +395,75 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js")
     .then(() => console.log("Service Worker Registered"));
 }
+ // ================= SERVICE WORKER REG =================
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/music/service-worker.js")
+    .then(reg => {
+      console.log("SW Registered ✅");
+
+      // Detect updates
+      reg.addEventListener("updatefound", () => {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener("statechange", () => {
+          if (
+            newWorker.state === "installed" &&
+            navigator.serviceWorker.controller
+          ) {
+            console.log("New version available 🚀");
+            handleAppUpdate();
+          }
+        });
+      });
+    })
+    .catch(err => console.error("SW Registration Failed:", err));
+}
+
+// ================= UPDATE HANDLER =================
+function handleAppUpdate() {
+  const lastPrompt = localStorage.getItem("updatePromptTime");
+  const now = Date.now();
+
+  // Only notify once every 24 hours
+  if (!lastPrompt || now - lastPrompt > 24 * 60 * 60 * 1000) {
+    localStorage.setItem("updatePromptTime", now);
+
+    setTimeout(() => {
+      showUpdateAlert();
+    }, 3000);
+  }
+}
+
+// ================= UPDATE ALERT UI =================
+function showUpdateAlert() {
+  const banner = document.createElement("div");
+  banner.className = "update-banner";
+
+  banner.innerHTML = `
+    <div class="update-content">
+      🎵 HALA MAYE has new updates<br>
+      <button id="updateBtn">Update Now</button>
+      <button id="dismissBtn">Later</button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+
+  document.getElementById("updateBtn").onclick = () => {
+    window.location.reload();
+  };
+
+  document.getElementById("dismissBtn").onclick = () => {
+    banner.remove();
+  };
+}
+
+// ================= NETWORK RESTORE CHECK =================
+window.addEventListener("online", () => {
+  console.log("Back Online 🌐 → Checking updates...");
+  navigator.serviceWorker.getRegistration()
+    .then(reg => reg?.update());
+});
 </script>
 </body>
 </html>
