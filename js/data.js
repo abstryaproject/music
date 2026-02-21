@@ -28,7 +28,7 @@ const songs = [
     title: "M Sharif Remix",
     artist: "Others",
     album: "Others",
-    cover: "assets/covers/m_Sharif.jpg",
+    cover: "assets/covers/m_sharif.jpg",
     audio: "assets/audio/m_sharif.mp3",
     download: "assets/audio/m_sharif.mp3",
     featured: false
