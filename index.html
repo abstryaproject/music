@@ -291,6 +291,30 @@
   });
 </script>
   <style>
+  .network-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.network-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hidden {
+  display: none;
+    }
   .install-container {
   position: fixed;
   bottom: 30px;
@@ -365,7 +389,51 @@
   to { transform: translateY(0); opacity: 1; }
 }
   </style>
-  <script>    
+  <script>
+   const networkToast = document.getElementById("networkToast");
+let toastTimer;
+
+// Reusable toast
+function showToast(message, type = "info") {
+  if (!networkToast) return;
+
+  networkToast.textContent = message;
+  networkToast.classList.remove("hidden");
+  networkToast.classList.add("show");
+
+  // Clear previous timer
+  clearTimeout(toastTimer);
+
+  // Auto hide after 4 seconds
+  toastTimer = setTimeout(() => {
+    networkToast.classList.remove("show");
+
+    setTimeout(() => {
+      networkToast.classList.add("hidden");
+    }, 300); // allow fade-out animation
+  }, 4000);
+}
+
+// ================= NETWORK EVENTS =================
+window.addEventListener("online", () => {
+  showToast("🟢 Back Online");
+  
+  navigator.serviceWorker?.getRegistration()
+    .then(reg => reg?.update());
+});
+
+window.addEventListener("offline", () => {
+  showToast("🔴 You're Offline");
+});
+
+// ================= INITIAL SILENT CHECK =================
+document.addEventListener("DOMContentLoaded", () => {
+  if (navigator.onLine) {
+    showToast("🟢 Online");
+  } else {
+    showToast("🔴 Offline");
+  }
+}); 
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
