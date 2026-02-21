@@ -8,8 +8,8 @@ const APP_SHELL = [
   "/music/js/data.js",
   "/music/js/anti-copy.js",
   "/music/assets/covers/halamaye-cover.png",
+  "/music/assets/covers/halamaye-cover.jpg",
   "/music/assets/covers/admin.webp",
-  "/music/assets/album/others.webp",
   "/music/assets/covers/others.webp",
   "/music/assets/audio/gdss_lailaba.mp3",
   "/music/assets/audio/angon_sakina.mp3"
