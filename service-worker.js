@@ -1,4 +1,4 @@
-const CACHE_NAME = "halamaye-v4";
+const CACHE_NAME = "halamaye-v3";
 
 const APP_SHELL = [
   "/music/",
@@ -7,16 +7,11 @@ const APP_SHELL = [
   "/music/js/app.js",
   "/music/js/data.js",
   "/music/js/anti-copy.js",
-  "/music/assets/covers/halamaye-cover.png"
+  "/music/assets/covers/halamaye-cover.png",
+  "/music/assets/audio/gdss_lailaba.mp3",
+  "/music/assets/audio/angon_sakina.mp3"
 ];
-// 🎵 Songs to pre-cache on install
-const PRECACHE_AUDIO = [
-  "/music/assets/audio/angon_sakina.mp3",
-  "/music/assets/audio/gdss_lailaba.mp3"
-  // Add more songs here:
-  // "/music/assets/audio/song2.mp3",
-  // "/music/assets/audio/song3.mp3"
-];
+
 // ================= INSTALL =================
 self.addEventListener("install", event => {
   console.log("SW: Installing...");
