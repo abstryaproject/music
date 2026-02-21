@@ -68,7 +68,7 @@ const albums = [
   },
    {
     title: "Others",
-    cover: "assets/albums/others.webp",
+    cover: "assets/covers/others.webp",
     songs: songs.filter(s => s.album === "Others")
   }
 ];
@@ -81,7 +81,7 @@ const artists = [
   },
    {
     name: "Others",
-    photo: "assets/artists/others.webp",
+    photo: "assets/covers/others.webp",
     songs: songs.filter(s => s.artist === "Others")
   }
 ];
