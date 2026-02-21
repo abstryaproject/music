@@ -38,7 +38,7 @@ const songs = [
     title: "Ali_jita Remix",
     artist: "Others",
     album: "Others",
-    cover: "assets/covers/ali_jita.jpg",
+    cover: "assets/covers/ali_jita.jpeg",
     audio: "assets/audio/ali_jita.mp3",
     download: "assets/audio/ali_jita.mp3",
     featured: false
@@ -68,7 +68,7 @@ const albums = [
   },
    {
     title: "Others",
-    cover: "assets/albums/others_album_cover.jpg",
+    cover: "assets/albums/others.webp",
     songs: songs.filter(s => s.album === "Others")
   }
 ];
@@ -81,7 +81,7 @@ const artists = [
   },
    {
     name: "Others",
-    photo: "assets/artists/others_artist_cover.jpg",
+    photo: "assets/artists/others.webp",
     songs: songs.filter(s => s.artist === "Others")
   }
 ];
