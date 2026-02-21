@@ -1,5 +1,6 @@
 const CACHE_NAME = "halamaye-v4";
 
+// 🎯 App Shell (UI)
 const APP_SHELL = [
   "/music/",
   "/music/index.html",
@@ -9,24 +10,23 @@ const APP_SHELL = [
   "/music/js/anti-copy.js",
   "/music/assets/covers/halamaye-cover.png"
 ];
-// 🎵 Songs to pre-cache on install
+
+// 🎵 Pre-cached songs
 const PRECACHE_AUDIO = [
   "/music/assets/audio/angon_sakina.mp3",
   "/music/assets/audio/gdss_lailaba.mp3"
-  // Add more songs here:
-  // "/music/assets/audio/song2.mp3",
-  // "/music/assets/audio/song3.mp3"
 ];
+
 // ================= INSTALL =================
 self.addEventListener("install", event => {
-  console.log("SW: Installing...");
+  console.log("SW: Installing & pre-caching...");
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log("SW: Caching app shell...");
-        return cache.addAll(APP_SHELL);
-      })
-      .then(() => self.skipWaiting())
+    caches.open(CACHE_NAME).then(cache =>
+      Promise.all([
+        cache.addAll(APP_SHELL),
+        cache.addAll(PRECACHE_AUDIO)
+      ])
+    ).then(() => self.skipWaiting())
   );
 });
 
@@ -36,12 +36,8 @@ self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys
-          .filter(key => key !== CACHE_NAME)
-          .map(key => {
-            console.log("SW: Removing old cache:", key);
-            return caches.delete(key);
-          })
+        keys.filter(key => key !== CACHE_NAME)
+            .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
   );
@@ -57,20 +53,20 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // 🌐 Stale-While-Revalidate strategy
+  // 🌐 Stale-While-Revalidate
   event.respondWith(
-    caches.match(request).then(cachedResponse => {
+    caches.match(request).then(cached => {
 
       const networkFetch = fetch(request)
-        .then(response => {
-          return caches.open(CACHE_NAME).then(cache => {
-            cache.put(request, response.clone()); // silent update
+        .then(response =>
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, response.clone());
             return response;
-          });
-        })
-        .catch(() => cachedResponse);
+          })
+        )
+        .catch(() => cached);
 
-      return cachedResponse || networkFetch;
+      return cached || networkFetch;
     })
   );
 });
@@ -89,8 +85,7 @@ async function cacheAudio(request) {
     return response;
   } catch {
     return new Response("Offline and audio not cached", {
-      status: 503,
-      statusText: "Offline"
+      status: 503
     });
   }
 }
