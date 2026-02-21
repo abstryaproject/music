@@ -1,4 +1,4 @@
-const CACHE_NAME = "halamaye-v3";
+const CACHE_NAME = "halamaye";
 
 const APP_SHELL = [
   "/music/",
