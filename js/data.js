@@ -15,14 +15,34 @@ const songs = [
   },
   {
     id: 2,
-    title: "Angon Sakina ",
+    title: "Angon Sakina",
     artist: "HalaMaye",
     album: "HalaMaye 2026",
     cover: "assets/covers/angon_sakina.jpg",
     audio: "assets/audio/angon_sakina.mp3",
     download: "assets/audio/angon_sakina.mp3",
     featured: true
-  }
+  },
+   {
+    id: 3,
+    title: "M Sharif Remix",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/m_Sharif.jpg",
+    audio: "assets/audio/m_sharif.mp3",
+    download: "assets/audio/m_sharif.mp3",
+    featured: false
+   },
+ {
+    id: 4,
+    title: "Ali_jita Remix",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/ali_jita.jpg",
+    audio: "assets/audio/ali_jita.mp3",
+    download: "assets/audio/ali_jita.mp3",
+    featured: false
+   }  
 ];
 
   
