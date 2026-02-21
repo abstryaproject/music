@@ -50,20 +50,6 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="installOverlay" class="install-overlay">
-  <div class="install-box">
-    <h2>Installing HALA MAYE 🎵</h2>
-    <p>Preparing offline experience...</p>
-
-    <div class="progress-bar">
-      <div id="progressFill"></div>
-    </div>
-
-    <p id="progressText">Starting...</p>
-
-    <button id="openAppBtn" hidden>Open App</button>
-  </div>
-  </div>
   <div id="secure-content"></div>
  <div class="left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
 
@@ -304,47 +290,6 @@
   });
 </script>
   <style>
-    .install-overlay {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  color: white;
-}
-
-.install-box {
-  width: 90%;
-  max-width: 320px;
-  text-align: center;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #222;
-  border-radius: 10px;
-  margin: 20px 0;
-  overflow: hidden;
-}
-
-#progressFill {
-  height: 100%;
-  width: 0%;
-  background: cyan;
-  transition: width 0.3s ease;
-}
-
-#openAppBtn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: cyan;
-  font-weight: bold;
-  }
   .install-container {
   position: fixed;
   bottom: 30px;
@@ -419,69 +364,7 @@
   to { transform: translateY(0); opacity: 1; }
 }
   </style>
-  <script>
-const overlay = document.getElementById("installOverlay");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
-const openBtn = document.getElementById("openAppBtn");
-
-// Detect if running as installed PWA
-const isStandalone = window.matchMedia("(display-mode: standalone)").matches;
-
-if (isStandalone) {
-  const alreadyInstalled = localStorage.getItem("offlineReady");
-
-  if (!alreadyInstalled) {
-    runFakeInstaller();
-  } else {
-    overlay.style.display = "none";
-  }
-} else {
-  overlay.style.display = "none";
-}
-
-async function runFakeInstaller() {
-  overlay.style.display = "flex";
-
-  const assetsToCache = [
-    "/music/index.html",
-    "/music/css/style.css",
-    "/music/js/app.js",
-    "/music/js/data.js",
-    "/music/assets/audio/angon_sakina.mp3",
-    "/music/assets/audio/gdss_lailaba.mp3"
-  ];
-
-  let cachedCount = 0;
-
-  const cache = await caches.open("halamaye-v4");
-
-  for (const asset of assetsToCache) {
-    try {
-      await cache.add(asset);
-      cachedCount++;
-
-      const percent = Math.round((cachedCount / assetsToCache.length) * 100);
-
-      progressFill.style.width = percent + "%";
-      progressText.textContent = `Installing... ${percent}%`;
-
-    } catch (err) {
-      console.log("Cache failed:", asset);
-    }
-  }
-
-  progressText.textContent = "Installation Complete ✅";
-
-  localStorage.setItem("offlineReady", "true");
-
-  openBtn.hidden = false;
-
-  openBtn.onclick = () => {
-    overlay.style.display = "none";
-  };
-}    
-    
+  <script>    
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
