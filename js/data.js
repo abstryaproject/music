@@ -98,7 +98,7 @@ const songs = [
     title: "Namenj",
     artist: "Others",
     album: "Others",
-    cover: "assets/covers/nanenj.jpg",
+    cover: "assets/covers/namenj.jpg",
     audio: "assets/audio/Namenj_Rayuwata.mp3",
     download: "assets/audio/Namenj_Rayuwata.mp3",
     featured: false
