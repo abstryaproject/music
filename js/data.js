@@ -25,7 +25,7 @@ const songs = [
   },
    {
     id: 3,
-    title: "M Sharif Remix",
+    title: "Umar M. Sharif",
     artist: "Others",
     album: "Others",
     cover: "assets/covers/m_sharif.jpg",
@@ -35,14 +35,74 @@ const songs = [
    },
  {
     id: 4,
-    title: "Ali_jita Remix",
+    title: "Ali Jita",
     artist: "Others",
     album: "Others",
     cover: "assets/covers/ali_jita.jpeg",
     audio: "assets/audio/ali_jita.mp3",
     download: "assets/audio/ali_jita.mp3",
     featured: false
-   }  
+   },
+   {
+    id: 5,
+    title: "Sarkin Waka",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/naziru.jpg",
+    audio: "assets/audio/naziru.mp3",
+    download: "assets/audio/naziru.mp3",
+    featured: false
+   },
+   {
+    id: 6,
+    title: "Ado Gwanja",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/ado_gwanja.jpg",
+    audio: "assets/audio/ado_gwanja.mp3",
+    download: "assets/audio/ado_gwanja.mp3",
+    featured: false
+   },
+   {
+    id: 7,
+    title: "Alhajin Alhaji",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/alhajin_alhaji.jpg",
+    audio: "assets/audio/alhajin_alhaji.mp3",
+    download: "assets/audio/alhajin_alhaji.mp3",
+    featured: false
+   },
+   {
+    id: 8,
+    title: "Auta MG",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/auta_mg.jpg",
+    audio: "assets/audio/auta_mg.mp3",
+    download: "assets/audio/auta_mg.mp3",
+    featured: false
+   },
+   {
+    id: 9,
+    title: "Auta Waziri",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/auta_waziri.jpg",
+    audio: "assets/audio/auta_waziri.mp3",
+    download: "assets/audio/auta_waziri.mp3",
+    featured: false
+   },
+   {
+    id: 10,
+    title: "Namenj",
+    artist: "Others",
+    album: "Others",
+    cover: "assets/covers/nanenj.jpg",
+    audio: "assets/audio/namenj.mp3",
+    download: "assets/audio/namenj.mp3",
+    featured: false
+   },
 ];
 
   
