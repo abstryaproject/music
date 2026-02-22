@@ -99,8 +99,8 @@ const songs = [
     artist: "Others",
     album: "Others",
     cover: "assets/covers/nanenj.jpg",
-    audio: "assets/audio/namenj.mp3",
-    download: "assets/audio/namenj.mp3",
+    audio: "assets/audio/Namenj_Rayuwata.mp3",
+    download: "assets/audio/Namenj_Rayuwata.mp3",
     featured: false
    },
 ];
