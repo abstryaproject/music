@@ -25,6 +25,16 @@ const songs = [
   },
    {
     id: 3,
+    title: "Iya Wuya",
+    artist: "HalaMaye",
+    album: "HalaMaye 2025",
+    cover: "assets/covers/angon_sakina.jpg",
+    audio: "assets/audio/iyawuya.mp3",
+    download: "assets/audio/iyawuya.mp3",
+    featured: true
+  },
+   {
+    id: 4,
     title: "Umar M. Sharif",
     artist: "Others",
     album: "Others",
@@ -34,7 +44,7 @@ const songs = [
     featured: false
    },
  {
-    id: 4,
+    id: 5,
     title: "Ali Jita",
     artist: "Others",
     album: "Others",
@@ -44,7 +54,7 @@ const songs = [
     featured: false
    },
    {
-    id: 5,
+    id: 6,
     title: "Sarkin Waka",
     artist: "Others",
     album: "Others",
@@ -54,7 +64,7 @@ const songs = [
     featured: false
    },
    {
-    id: 6,
+    id: 7,
     title: "Ado Gwanja",
     artist: "Others",
     album: "Others",
@@ -64,7 +74,7 @@ const songs = [
     featured: false
    },
    {
-    id: 7,
+    id: 8,
     title: "Alhajin Alhaji",
     artist: "Others",
     album: "Others",
@@ -74,7 +84,7 @@ const songs = [
     featured: false
    },
    {
-    id: 8,
+    id: 9,
     title: "Auta MG",
     artist: "Others",
     album: "Others",
@@ -84,7 +94,7 @@ const songs = [
     featured: false
    },
    {
-    id: 9,
+    id: 10,
     title: "Auta Waziri",
     artist: "Others",
     album: "Others",
@@ -94,7 +104,7 @@ const songs = [
     featured: false
    },
    {
-    id: 10,
+    id: 11,
     title: "Namenj",
     artist: "Others",
     album: "Others",
