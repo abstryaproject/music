@@ -5,7 +5,7 @@
 const songs = [
   {
     id: 1,
-    title: "GDSSS Lailaba",
+    title: "Happy Graduation",
     artist: "HalaMaye",
     album: "HalaMaye 2025",
     cover: "assets/covers/gdss_lailaba.jpg",
