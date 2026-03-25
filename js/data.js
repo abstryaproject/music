@@ -115,7 +115,7 @@ const songs = [
    },
    {
   id: 13,
-    title: "Kina Burina Balaraba",
+    title: "Balaraba",
     artist: "Others",
     album: "HalaMaye 2025",
     cover: "assets/covers/naziru.jpg",
