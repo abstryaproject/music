@@ -113,6 +113,16 @@ const songs = [
     download: "assets/audio/Namenj_Rayuwata.mp3",
     featured: false
    },
+   {
+  id: 13,
+    title: "Kina Burina Balaraba",
+    artist: "Others",
+    album: "HalaMaye 2025",
+    cover: "assets/covers/naziru.jpg",
+    audio: "assets/audio/Naziru-Sarkin-Waka-–-Kina-Burgeni-Balaraba-Ft.-Fati-Niger.mp3",
+    download: "assets/audio/Naziru-Sarkin-Waka-–-Kina-Burgeni-Balaraba-Ft.-Fati-Niger.mp3",
+    featured: true
+  }
 ];
 
   
