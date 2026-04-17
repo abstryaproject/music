@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+/* Hidden by default */
+#downloadBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 20px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Show animation */
+#downloadBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+</style>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="google-adsense-account" content="ca-pub-1968028717012078">
@@ -52,19 +79,33 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
- <button onclick="downloadFile()">Download APP</button>
+<button id="downloadBtn" onclick="downloadFile()">Download Now</button>
 
 <script>
+// Show button on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("downloadBtn");
+
+    // Show after 1 second
+    setTimeout(() => {
+        btn.classList.add("show");
+    }, 1000);
+
+    // Hide after 6 seconds
+    setTimeout(() => {
+        btn.classList.remove("show");
+    }, 6000);
+});
+
 function downloadFile() {
     const link = document.createElement("a");
-    link.href = "hala-app.apk";
-    link.download = "hala-app.apk";
+    link.href = "your-file.pdf"; // replace this
+    link.download = "your-file.pdf";
+    document.body.appendChild(link);
     link.click();
-
-    localStorage.setItem("fileDownloaded", "true");
+    document.body.removeChild(link);
 }
-</script> 
-   <div id="networkToast" class="network-toast hidden"></div>
+</script>
   <div id="secure-content"></div>
  <div class="left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
 
