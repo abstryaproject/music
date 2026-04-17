@@ -79,7 +79,29 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-<button id="downloadBtn" onclick="downloadFile()">Download App</button>
+
+  <div id="secure-content"></div>
+ <div class="left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
+
+  <!-- ==============================
+       NAVBAR
+  =============================== -->
+  <nav class="flex items-center justify-between px-6 py-4">
+  
+  <h1 class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
+    <img src="assets/covers/halamaye-cover.png" 
+         alt="HALA MAYE" 
+         class="w-8 h-8 object-contain cover-animate" />
+    HALA MAYE
+  </h1> 
+    
+  <div class="flex gap-3">
+    <a href="#" class="px-4 py-2" onclick="openDevAgencyModal()">Home</a>
+    <a href="#albums" class="px-4 py-2">Albums</a>
+    <a href="#artists" class="px-4 py-2">Artists</a>
+  </div>
+  </nav>
+   <button id="downloadBtn" onclick="downloadFile()">Download App</button>
 
 <script>
 // Show button on page load
@@ -106,28 +128,6 @@ function downloadFile() {
     document.body.removeChild(link);
 }
 </script>
-  <div id="secure-content"></div>
- <div class="left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
-
-  <!-- ==============================
-       NAVBAR
-  =============================== -->
-  <nav class="flex items-center justify-between px-6 py-4">
-  
-  <h1 class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
-    <img src="assets/covers/halamaye-cover.png" 
-         alt="HALA MAYE" 
-         class="w-8 h-8 object-contain cover-animate" />
-    HALA MAYE
-  </h1> 
-    
-  <div class="flex gap-3">
-    <a href="#" class="px-4 py-2" onclick="openDevAgencyModal()">Home</a>
-    <a href="#albums" class="px-4 py-2">Albums</a>
-    <a href="#artists" class="px-4 py-2">Artists</a>
-  </div>
-
-  </nav>
  </div>
   
   <!-- ==============================
