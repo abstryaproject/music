@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Check if user has visited before
-    if (!localStorage.getItem("fileDownloaded")) {
-
-        // Create a hidden download link
-        const link = document.createElement("a");
-        link.href = "assets/covers/admin.webp"; // replace with your file path
-        link.download = "assets/covers/admin.webp";
-        document.body.appendChild(link);
-
-        // Trigger download
-        link.click();
-
-        // Mark as downloaded
-        localStorage.setItem("fileDownloaded", "true");
-
-        // Cleanup
-        document.body.removeChild(link);
-    }
-});
-</script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="google-adsense-account" content="ca-pub-1968028717012078">
@@ -75,6 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
      crossorigin="anonymous"></script>
 </head>
 <body>
+ <button onclick="downloadFile()">Download APP</button>
+
+<script>
+function downloadFile() {
+    const link = document.createElement("a");
+    link.href = "hala-app.apk";
+    link.download = "hala-app.apk";
+    link.click();
+
+    localStorage.setItem("fileDownloaded", "true");
+}
+</script> 
    <div id="networkToast" class="network-toast hidden"></div>
   <div id="secure-content"></div>
  <div class="left-0 right-0 bg-gray-900 p-4 flex flex-col md:flex-col gap-4 text-white shadow-lg">
